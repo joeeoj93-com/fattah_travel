@@ -39,9 +39,7 @@ ManualBook.txt
 modules.txt
 Composer-Setup.exe
 composer.phar
-composer.lock
 composer-temp.phar
 composer-setup.php
-phpunit.xml
 *.md
 !README.md
