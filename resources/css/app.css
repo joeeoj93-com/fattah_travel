@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+@layer components {
+	.scroll-reveal {
+		opacity: 0;
+		transform: translate3d(0, 20px, 0);
+		transition: opacity 0.9s ease, transform 0.9s ease;
+		will-change: opacity, transform;
+	}
+
+	.scroll-reveal[data-reveal="left"] {
+		transform: translate3d(-32px, 0, 0);
+	}
+
+	.scroll-reveal[data-reveal="right"] {
+		transform: translate3d(32px, 0, 0);
+	}
+
+	.scroll-reveal[data-reveal="up"] {
+		transform: translate3d(0, 32px, 0);
+	}
+
+	.scroll-reveal[data-reveal="down"] {
+		transform: translate3d(0, -32px, 0);
+	}
+
+	.scroll-reveal.is-visible {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.scroll-reveal {
+		transition: none;
+		transform: none;
+		opacity: 1;
+	}
+}
