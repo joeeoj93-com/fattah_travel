@@ -23,3 +23,25 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 .agent/
+*.exe
+*.phar
+*.php-setup
+composer-setup.php
+artisan.txt
+storage/logs/*.log
+/public/storage
+# Sensitive & Temporary Files
+mcp_config_*.json
+*.sql
+checkpoint_deploy.txt
+content_fattah.md
+ManualBook.txt
+modules.txt
+Composer-Setup.exe
+composer.phar
+composer.lock
+composer-temp.phar
+composer-setup.php
+phpunit.xml
+*.md
+!README.md
