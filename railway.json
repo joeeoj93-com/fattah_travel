@@ -10,6 +10,7 @@
       "php artisan migrate --force"
     ],
     "healthcheckPath": "/health-check",
+    "healthcheckTimeout": 5,
     "sleepApplication": false,
     "ipv6EgressEnabled": true,
     "multiRegionConfig": {
