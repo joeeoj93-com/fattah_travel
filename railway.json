@@ -9,8 +9,8 @@
     "preDeployCommand": [
       "php artisan migrate --force"
     ],
+    "healthcheckPath": "/health-check",
     "sleepApplication": false,
-    "useLegacyStacker": false,
     "ipv6EgressEnabled": true,
     "multiRegionConfig": {
       "asia-southeast1-eqsg3a": {

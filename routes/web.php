@@ -18,6 +18,31 @@ Route::get('/', function () {
     return view('welcome', compact('sponsors', 'testimonials'));
 });
 
+// Diagnostic Routes
+Route::get('/health-check', function () {
+    return response()->json([
+        'status' => 'OK',
+        'message' => 'Server is alive',
+        'time' => now()->toDateTimeString()
+    ]);
+});
+
+Route::get('/debug-db', function () {
+    try {
+        \DB::connection()->getPdo();
+        return response()->json([
+            'status' => 'Connected',
+            'database' => \DB::connection()->getDatabaseName()
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'Error',
+            'message' => $e->getMessage()
+        ], 500);
+    }
+});
+
+
 Route::get('/paket-umrah', [FrontController::class, 'umrah'])->name('front.umrah');
 
 Route::get('/paket-haji', [FrontController::class, 'haji'])->name('front.haji');
